@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+		<h2 th:if="${campus}==null  and ${obj.size()}>0">All Departments in All Campuses </h2>
+		<h2 th:unless="${campus}==null">All Departments in <span th:text="${campus.getName()}"></span> Campus </h2>
+		<h2 th:if="${obj.size()}==0">Campus is not exists with given id</h2>
+		<ul>
+	
+		<li th:each="n,status:${obj}">
+			<span  th:text="${n}" ></span>
+		
+		</li>
+	</ul>
+	
+	<h4>Enter department id to know the Sections of Department</h4>
+	<form action="/getSectionsByDepartmentId" method="get">
+	<input type="number" name="id">
+	<input type="submit">
+		</form>
+	
+	<h4>Enter department id to delete the department</h4>
+	<form action="/deleteDepartment" method="post">
+	<input type="number" name="id">
+	<input type="submit">
+		</form>
+		
+		
+	<form action="/addDepartmentToCampus" method="post">
+	<h2>Enter Campus Id to To add Department</h2>
+	<input type="number" name="cid" required><br>
+	<h2>Enter Department Details To add</h2>
+	
+	
+		<label>Department Id : </label>
+		<input type="number" name="id" required><br>
+		<label>Department Name : </label>
+		<input type="text" name="name" required><br>
+		<label>HOD : </label>
+		<input type="text" name="HOD"><br>
+		
+		<input type="submit"><br>
+	</form>
+	
+	
+	
+	
+	
+	
+</body>
+</html>

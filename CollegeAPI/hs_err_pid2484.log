@@ -1,0 +1,33 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f6853d46375, pid=2484, tid=2500
+#
+# JRE version: Java(TM) SE Runtime Environment (15.0.1+9) (build 15.0.1+9-18)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (15.0.1+9-18, mixed mode, sharing, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x4375]  ImageStrings::find(Endian*, char const*, int*, unsigned int)+0x65
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport -p%p -s%s -c%c -d%d -P%P -u%u -g%g -- %E" (or dumping to /home/student/eclipse/springProject/CollegeAPI/core.2484)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -XX:+ShowCodeDetailsInExceptionMessages -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:46323 -javaagent:/home/student/eclipse/jee-2020-09/eclipse/configuration/org.eclipse.osgi/401/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 com.example.CollegeAPI.CollegeApiApplication
+
+Host: AMD A9-9420 RADEON R5, 5 COMPUTE CORES 2C+3G, 2 cores, 3G, Ubuntu 18.04.6 LTS
+Time: Sat Nov 19 22:54:26 2022 IST elapsed time: 1970.241236 seconds (0d 0h 32m 50s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f684c10d910):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=2500, stack(0x00007f6813eff000,0x00007f6814000000)]
+
+Stack: [0x00007f6813eff000,0x00007f6814000000],  sp=0x00007f6813ffd1b0,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x4375]  ImageStrings::find(Endian*, char const*, int*, unsigned int)+0x65
+C  [libjimage.so+0x4f0e]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x3e
+C  [libjimage.so+0x540c]  JIMAGE_FindResource+0xfc
+V  [libjvm.so+0x4e9f51]

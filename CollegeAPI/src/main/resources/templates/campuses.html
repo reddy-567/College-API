@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h1>All Campuses</h1>
+	
+	<ul>
+	
+		<li th:each="n,status:${obj}">
+			<span  th:text="${n}" ></span>
+		
+		</li>
+	</ul>
+
+	<a href="/getAllDepartments">click here to view the departments in all campuses</a>
+
+	<h4>Enter campus id to know the departments of campus</h4>
+	<form action="/getDepartmentsById" method="get">
+	<input type="number" name="id">
+	<input type="submit">
+		</form>
+		
+	
+	<h4>Enter campus id to delete the campus</h4>
+	<form action="/deleteCampus" method="post">
+	<input type="number" name="id">
+	<input type="submit">
+		</form>
+		
+		
+	<h2>Enter Campus Details To add</h2>
+	
+	<form action="/addCampus" method="post">
+	<!-- 	<label>Campus Id : </label>
+		<input type="number" name="id"><br> -->
+		<label>Campus Name : </label>
+		<input type="text" name="name" required><br>
+		<label>Campus Location : </label>
+		<input type="text" name="location" required><br>
+		
+		<input type="submit"><br>
+	</form>
+</body>
+</html>

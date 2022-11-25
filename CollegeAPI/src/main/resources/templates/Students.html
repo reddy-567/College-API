@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<h2 th:unless="${section==null}">All Students in Section <span  th:text="${section.getSname()}"></span>, Id :  <span  th:text="${section.getId()}"></span> </h2>
+	<h2 th:if="${section==null}">Section is not exist with given section id</h2>
+	<ul th:unless="${section==null}">
+	
+		<li th:each="n,status:${obj}">
+			<span  th:text="${n}" ></span>
+		
+		</li>
+	</ul>
+	
+	<h4>Enter Student id to delete the Student</h4>
+	<form action="/deleteStudent" method="post">
+	<input type="number" name="id">
+	<input type="submit">
+		</form>
+	
+	<h4>Enter Details Of Students To add to Specific Section</h4>
+	
+		<form action="/addStudentsToSection" method="post">
+	<h2>Enter Section Id To add Student</h2>
+	<input type="number" name="sid"><br>
+	<h2>Enter Student Details To add</h2>
+	
+	
+		
+		<label>Section Name : </label>
+		<input type="text" name="name"><br>
+		
+		<input type="submit"><br>
+	</form>
+	
+</body>
+</html>
